@@ -10,10 +10,8 @@ class App extends Component {
             joke: "Let's Get Going"
         }
     }
-    componentWillUnmount() {
-        this.setState({joke:""})
-    }
-    onRefresh = async function () {
+
+    onRefresh = async () =>{
         const resp = await fetch("https://api.chucknorris.io/jokes/random")
         const data = await resp.json();
         this.setState({joke: data["value"]});
